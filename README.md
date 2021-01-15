@@ -1,9 +1,11 @@
 # freeipa-pen
-## Email alerts and reports for expiring passwords in a FreeIPA domain.
+## Password Expiration Notifications for FreeIPA
 
-FreeIPA-PEN is a bash script designed to be installed on an IPA server and invoked by cron.  
+FreeIPA-PEN is a bash script designed to be installed on an IPA server and invoked by cron. It sends emails to users to alert of imminent password expiration. It can also email an admin user a report on soon-to-expire and already expired accounts.  
 
-Configuration before use is required and can be done in the mailer.conf file.  
+`install.sh` copies `mailer.sh` and `mailer.conf` to `/etc/passexp/` and sets sane permissions.  
+
+Configuration before use is required and can be done in the `mailer.conf` file.  
 You will also need:  
 - a FreeIPA System (Service) Account - [FreeIPA-SAM](https://github.com/noahbliss/freeipa-sam) can help  
 - users in FreeIPA with valid "mail" values  
