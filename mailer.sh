@@ -22,6 +22,7 @@ notify_users() {
         < /dev/null > "$ldap_out" # wipe $ldap_out
         < /dev/null > "$nomail_users" # wipe $nomail_users
         < /dev/null > "$expired_users" # wipe $expired_users
+	chmod 600 "$ldap_out" "$nomail_users" "$expired_users"
 	# Fetch info from ldap
 	ldapsearch -xw "$password" -D "$bind_dn" -b "$search_base" -LLL "(&(krbPasswordExpiration=*)(!(nsaccountlock=TRUE)))" dn uid krbPasswordExpiration mail > "$ldap_out"
 	echo "" >> "$ldap_out" # add a blank line so the last user processes
