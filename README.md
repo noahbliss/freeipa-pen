@@ -5,8 +5,15 @@ FreeIPA-PEN is a bash script designed to be installed on an IPA server and invok
 
 ### There are two functions which may be called as arguements:  
 
-## asdf
-asdf asdf asdf  
+## notify_users
+```
+./mailer.sh notify_users
+```
+This function is designed to be run every day. It queries users in LDAP via a system account configured in mailer.conf and sends an email to the user's email address if it exists and the expiration of their password falls within the notification window.  
 
-## otherthing  
-asdf asdf asdf  
+## admin_report  
+```
+./mailer.sh admin_report
+```
+
+
