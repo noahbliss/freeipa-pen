@@ -17,6 +17,11 @@ You will also need:
 ```
 ./mailer.sh notify_users
 ```
+Example cron entry (every day at 7a):  
+```
+0 7 * * * /etc/passexp/mailer.sh notify_users
+```
+
 This function is designed to be run every day. It queries users in LDAP via a system account configured in mailer.conf and sends an email to the user's email address if it exists and the expiration of their password falls within the notification window.  
 
 ## admin_report  
