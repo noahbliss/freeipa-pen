@@ -28,4 +28,9 @@ This function is designed to be run every day. It queries users in LDAP via a sy
 ```
 ./mailer.sh admin_report
 ```
+Example cron entry (first of the month at 7a):  
+```
+0 7 1 * * /etc/passexp/mailer.sh admin_report
+```
+
 This function is designed to be run at less regular intervals, like every week or month. It enumerates enabled accounts that do not have a valid mail value and lists them in a report for your administrator before they expire. It also includes a list of enabled but expired accounts for review.  
