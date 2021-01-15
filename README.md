@@ -3,6 +3,12 @@
 
 FreeIPA-PEN is a bash script designed to be installed on an IPA server and invoked by cron.  
 
+Configuration before use is required and can be done in the mailer.conf file.  
+You will also need:  
+- a FreeIPA System (Service) Account - [FreeIPA-SAM](https://github.com/noahbliss/freeipa-sam) can help  
+- users in FreeIPA with valid "mail" values  
+- a mail server that will accept and route notification messages (easiest way would probably be an internal open relay with only the FreeIPA server whitelisted)
+
 ### There are two functions which may be called as arguements:  
 
 ## notify_users
@@ -15,5 +21,4 @@ This function is designed to be run every day. It queries users in LDAP via a sy
 ```
 ./mailer.sh admin_report
 ```
-
-
+This function is designed to be run at less regular intervals, like every week or month. It enumerates enabled accounts that do not have a valid mail value and lists them in a report for your administrator before they expire. It also includes a list of enabled but expired accounts for review.  
