@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Noah Bliss - Jan 2021
 source /etc/passexp/mailer.conf
 #user=
 #password=
