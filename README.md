@@ -9,6 +9,7 @@ Configuration before use is required and can be done in the `mailer.conf` file.
 You will also need:  
 - a FreeIPA System (Service) Account - [FreeIPA-SAM](https://github.com/noahbliss/freeipa-sam) can help  
 - users in FreeIPA with valid "mail" values  
+- `mailx` installed
 - a mail server that will accept and route notification messages (easiest way would probably be an internal open relay with only the FreeIPA server whitelisted)
 
 ### There are two functions which may be called as arguements:  
