@@ -29,7 +29,7 @@ This function is designed to be run every day. It queries users in LDAP via a sy
 ```
 ./mailer.sh admin_report
 ```
-Example cron entry (first of the month at 7a):  
+Example cron entry (first of the month at 7:05a):  
 ```
 5 7 1 * * /etc/passexp/mailer.sh admin_report
 ```
